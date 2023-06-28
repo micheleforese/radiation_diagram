@@ -1,0 +1,14 @@
+# Python cache
+**/__pycache__
+.pytest_cache
+
+# Build 
+/build
+**/*.egg-info
+
+# Code Editors settings
+.vscode/*
+!.vscode/tasks.json
+
+# Tests
+data/*
