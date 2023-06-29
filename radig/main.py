@@ -48,7 +48,7 @@ def parse_metadata(metadata: str):
 
 def get_csv_files(
     file: str,
-) -> list[Dataset]:
+) -> List[Dataset]:
     csv_files: List[Dataset] = []
     index_list = []
 
