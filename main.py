@@ -2,7 +2,7 @@ import math
 from dataclasses import dataclass
 from io import StringIO
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 import click
 import matplotlib.pyplot as plt
@@ -14,14 +14,14 @@ from pandas import DataFrame, read_csv
 class Dataset:
     title: str = ""
     color: str = ""
-    bold: float | None = None
+    bold: Optional[float] = None
     data: str = ""
 
 
 def parse_metadata(metadata: str):
     title: str = ""
     color: str = ""
-    bold: float | None = None
+    bold: Optional[float] = None
 
     if metadata[0] == "#":
         metadata = metadata[1:]
@@ -86,8 +86,8 @@ def plot_graphs(
     csv_list: List[Dataset],
     *,
     title="",
-    range_min: int | None,
-    range_step: int | None,
+    range_min: Optional[int],
+    range_step: Optional[int],
     show: bool,
     output_filename: Path,
 ):
@@ -180,9 +180,9 @@ def cli(
     filename: Path,
     *,
     title: str,
-    range_min: int | None,
-    range_step: int | None,
-    output_filename: Path | None,
+    range_min: Optional[int],
+    range_step: Optional[int],
+    output_filename: Optional[Path],
     show: bool,
 ):
     file = filename.open(encoding="utf-8")
