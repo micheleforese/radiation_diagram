@@ -14,7 +14,7 @@ setup(
     install_requires=Path("requirements.txt").read_text().splitlines(),
     entry_points={
         "console_scripts": [
-            "radig = radig.main:cli",
+            "radig = radig.script:cli",
         ],
     },
 )

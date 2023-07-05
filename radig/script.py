@@ -99,7 +99,9 @@ def plot_graphs(
     data_dbm_max: float = -120
 
     for idx, csv in enumerate(csv_list):
-        data_frame_list.append(read_csv(StringIO(csv.data), header=0))
+        data_frame_list.append(
+            read_csv(StringIO(csv.data), header=0, dtype={"angles": int, "dbm": float})
+        )
 
         data_dbm_max = max(data_dbm_max, float(data_frame_list[idx]["dbm"].max()))
 
